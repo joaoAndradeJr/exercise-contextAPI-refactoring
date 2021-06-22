@@ -14,16 +14,16 @@ class Cars extends React.Component {
     return (
       <CarsContext.Consumer>
         { 
-          ({ cars, handleClick }) => (
+          ({ cars : { redCar, blueCar, yellowCar }, handleClick }) => (
             <div>
               <div>
                 <img
-                  className={cars.redCar ? 'car-right' : 'car-left'}
+                  className={redCar ? 'car-right' : 'car-left'}
                   src={carRed}
                   alt="red car"
                 />
                 <button
-                  onClick={() => handleClick('redCar', !cars.redCar)}
+                  onClick={() => handleClick('redCar', !redCar)}
                   type="button"
                 >
                   Move
@@ -31,12 +31,12 @@ class Cars extends React.Component {
               </div>
               <div>
                 <img
-                  className={cars.blueCar ? 'car-right' : 'car-left'}
+                  className={blueCar ? 'car-right' : 'car-left'}
                   src={carBlue}
                   alt="blue car"
                 />
                 <button
-                  onClick={() => handleClick('blueCar', !cars.blueCar)}
+                  onClick={() => handleClick('blueCar', !blueCar)}
                   type="button"
                 >
                   Move
@@ -44,12 +44,12 @@ class Cars extends React.Component {
               </div>
               <div>
                 <img
-                  className={cars.yellowCar ? 'car-right' : 'car-left'}
+                  className={yellowCar ? 'car-right' : 'car-left'}
                   src={carYellow}
                   alt="yellow car"
                 />
                 <button
-                  onClick={() => handleClick('yellowCar', !cars.yellowCar)}
+                  onClick={() => handleClick('yellowCar', !yellowCar)}
                   type="button"
                 >
                   Move
